@@ -2,41 +2,57 @@ package Task1;
 import java.lang.*;
 public class Ball
 {
-    private String Type;
-    private String Color;
+    private String type;
+    private String color;
     public Ball(String T, String C){
-        Type=T;
-        Color=C;
+        type=T;
+        color=C;
     }
-    public void SetType (String T)
-    {
-        this.Type=T;
+
+    @Override
+    public String toString() {
+        return "Ball{" +
+                "type='" + type + '\'' +
+                ", color='" + color + '\'' +
+                '}';
     }
-    public void SetColor(String C)
-    {
-        this.Color=C;
+
+    public void setType(String type) {
+        type = type;
     }
-    public void GetType(String Type)
-    {
-        this.Type=Type;
+
+    public void setColor(String color) {
+        color = color;
     }
-    String ToString()
-    {
-        return "Ball for "+ this.Type+" and color is "+ this.Color;
+
+    public String getColor() {
+        return color;
     }
-    void Out()
-    {
-        System.out.println("Ball's type is "+Type+" and color is "+Color);
+
+    public String getType() {
+        return type;
     }
-    public static void main (String[] args)
-    {
+
+    void Out() {
+        System.out.println("Ball's type is "+type+" and color is "+color);
+    }
+
+    public static void main (String[] args) {
+
         Ball b1 = new Ball ("BasketBall","Red");
+
         Ball b2 = new Ball ("Football","");
+
         Ball b3 = new Ball ("","White");
-        b2.SetColor("Yellow");
-        b3.SetType("Voleyball");
+
+        b2.setColor("Yellow");
+
+        b3.setType("Voleyball");
+
         b1.Out();
+
         b2.Out();
+
         b3.Out();
     }
 };

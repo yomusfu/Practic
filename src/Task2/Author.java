@@ -1,40 +1,49 @@
 package Task2;
 
 public class Author {
-    private String Name;
-    private char Gender;
-    private String Email;
-    Author(String name,char gender, String Email) {
-        this.Name=name;
-        this.Gender=gender;
-        this.Email=Email;
+
+    private String name;
+
+    private char gender;
+
+    private String email;
+
+    Author(String name,char gender, String email) {
+
+        this.name=name;
+
+        this.gender=gender;
+
+        this.email=email;
     }
-    public void SetName(String name)
-    {
-        this.Name=name;
+
+    public void setEmail(String email) {
+        email = email;
     }
-    public void SetEmail(String Email){
-        this.Email=Email;
+
+    public void setGender(char gender) {
+        gender = gender;
     }
-    public void SetGender(char gender)
-    {
-        this.Gender=gender;
+
+    public void setName(String name) {
+        name = name;
     }
-    public String GetName()
-    {
-        return Name;
+
+    public String getEmail() {
+        return email;
     }
-    public String GetEmail()
-    {
-        return Email;
+
+    public char getGender() {
+        return gender;
     }
-    public char GetGender()
-    {
-        return Gender;
+
+    public String getName() {
+        return name;
     }
+
     public void ToString()
     {
         System.out.println();
-        System.out.println(Name+" "+Gender+" at "+Email);
+        System.out.println(name+" "+gender+" at "+email);
     }
 }
