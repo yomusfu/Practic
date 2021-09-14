@@ -1,10 +1,10 @@
 package Task3;
 
-public class MovablePoint extends Movable{
-    int x;
-    int y;
-    int xSpeed;
-    int ySpeed;
+public class MovablePoint implements Movable{
+    public int x;
+    public  int y;
+    public int xSpeed;
+    public int ySpeed;
     MovablePoint(int x,int y,int xSpeed,int ySpeed){
         this.x=x;
         this.y=y;
@@ -23,22 +23,22 @@ public class MovablePoint extends Movable{
     }
 
     @Override
-    void moveDOWN() {
-        super.moveDOWN();
+    public void moveDOWN() {
+
     };
 
     @Override
-    void moveLeft() {
-        super.moveLeft();
+    public void moveLeft() {
+
     }
 
     @Override
-    void moveRight() {
-        super.moveRight();
+    public void moveRight() {
+
     }
 
     @Override
-    void moveUP() {
-        super.moveUP();
+    public void moveUP() {
+
     }
 }
