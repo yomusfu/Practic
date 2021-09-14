@@ -6,9 +6,15 @@ public abstract class Shape {
 
     protected  boolean filled;
 
-    Shape(){};
+    Shape(){
+        this.color="RED";
+        this.filled=false;
+    };
 
-    Shape(String color,boolean filled){};
+    Shape(String color,boolean filled){
+        this.color=color;
+        this.filled=filled;
+    };
 
     public String getColor() {
         return color;
