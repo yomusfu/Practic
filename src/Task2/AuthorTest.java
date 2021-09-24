@@ -6,7 +6,7 @@ public class AuthorTest {
     {
         Author a1=new Author("Jenih Simar",'M',"Jenih@mail.ru");
 
-        a1.ToString();
+        a1.toString();
 
     }
 }

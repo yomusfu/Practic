@@ -17,33 +17,36 @@ public class Author {
         this.email=email;
     }
 
-    public void setEmail(String email) {
-        email = email;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setGender(char gender) {
-        gender = gender;
+        this.gender = gender;
     }
 
-    public void setName(String name) {
-        name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public char getGender() {
-        return gender;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getName() {
         return name;
     }
 
-    public void ToString()
-    {
-        System.out.println();
-        System.out.println(name+" "+gender+" at "+email);
+    public char getGender() {
+        return gender;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "name='" + name + '\'' +
+                ", gender=" + gender +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

@@ -1,7 +1,6 @@
 package Task1;
 import java.lang.*;
-public class Ball
-{
+public class Ball {
     private String type;
     private String color;
     public Ball(String T, String C){
