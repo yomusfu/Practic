@@ -71,7 +71,7 @@ public class LabClassUI extends JFrame {
         header.setReorderingAllowed(false);
         header.setResizingAllowed(false);
 
-        // Почему на него нельзя повесить ActionListener?..
+
         header.addMouseListener(new MouseInputListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
