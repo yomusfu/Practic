@@ -1,8 +1,5 @@
 package Task11;
 
-// INV: FIFO (First in - first out)
-//      0 <= size
-//      queue[head]..queue[tail] - queue
 public class ArrayQueueADT {
 
     private ArrayQueueModule queue;
@@ -10,38 +7,23 @@ public class ArrayQueueADT {
     public ArrayQueueADT(ArrayQueueModule queue){
         this.queue = queue;
     }
-
-    // PRE: size > 0
-    // POST: R = queue[head]
-    //       queue[head] = queue[head+1]
-    //       queue[head+1]..queue[tail] - immutable
+//Удаляет и возвращет первый элемент в очереди
     public Object dequeue() {
         return queue.dequeue();
     }
-
-    // PRE:  size > 0
-    // POST: R = queue[head]
-    //       queue - immutable
+//Первый элемент в очереди
     public Object element() {
         return queue.element();
     }
-
-    // PRE:  None
-    // POST: queue[tail] = element
-    //       queue[head]..queue[tail-1] - immutable
+//Добавляет элемент в очередь
     public void enqueue(Object o) {
         queue.enqueue(o);
     }
 
-    // PRE:  None
-    // POST: queue - immutable
-    //       R = (head == tale)
     public boolean isEmpty() {
         return queue.isEmpty();
     }
 
-    // PRE:  None
-    // POST: size == 0
     public boolean clear() {
         return queue.clear();
     }

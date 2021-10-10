@@ -41,7 +41,7 @@ public class Address {
     }
 
     public static void main(String[] args) {
-        Address a1 = new Address("Россия, МО   ,    Москва, проспект Вернадского, 78, 7, Г-226-1", false);
+        Address a1 = new Address("Россия, МО   ,    Москва, проспект Вернадского, 78, 7, ИВЦ-101", false);
         Address a2 = new Address("USSR,      Leningradskaya oblast', Leningrad.    Nevskiy prospect; 234;1;23", true);
         Address a3 = new Address("UK, London, London, Trafalgar square, 2, 3, 4, other string,,,", false);
         Address a4 = new Address("Страна; регион;     город    . Улица, дом, корпус. Квартира", true);
