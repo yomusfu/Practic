@@ -1,18 +1,18 @@
 package Task16;
 
-public interface Order extends OrdersManager {
-    boolean add(MenuItem item);
+public interface Order {
+    boolean add(MenuItem item) throws AlcoholForNotMatureCustomerException;
     String[] itemsNames();
     int itemsQuantity();
     int itemQuantity(String itemName);
-    int itemQuantity(MenuItem itemName);
-    MenuItem getItems();
+    int itemQuantity(MenuItem item);
+    MenuItem[] getItems();
     boolean remove(String itemName);
     boolean remove(MenuItem item);
     int removeAll(String itemName);
     int removeAll(MenuItem item);
     MenuItem[] sortedItemsByCostDesc();
-    int costTotal();
+    double costTotal();
     Customer getCustomer();
-    void setCustomer(Customer customer);
+    void setCustomer(Customer newCustomer) throws AlcoholForNotMatureCustomerException;
 }

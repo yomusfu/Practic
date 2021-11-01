@@ -1,47 +1,32 @@
 package Task16;
 
-public final class Drink extends MenuItem {
-    int price;
-    String name;
-    String description;
+public class Drink extends MenuItem implements Alcoholable{
 
-    Drink(String name, String description) {
-        super();
-        this.name = name;
-        this.description = description;
-        this.price=0;
+    private double alcoholVol;
+    private DrinkTypeEnum type;
+
+    public Drink(String name, String description, double cost, double alcoholVol, DrinkTypeEnum type) {
+        super(name, description, cost);
+        this.alcoholVol = alcoholVol;
+        this.type = type;
     }
 
-    Drink(int price, String name, String description) {
-        super();
-        this.price = price;
-        this.name = name;
-        this.description = description;
+    public DrinkTypeEnum getType() {
+        return type;
     }
 
-    public int getPrice() {
-        return price;
+    @Override
+    public boolean isAlcoholDrink() {
+        return Double.compare(alcoholVol, 0) > 0;
     }
 
-    public String getName() {
-
-        return name;
+    @Override
+    public double getAlcoholVol() {
+        return alcoholVol;
     }
 
-    public String getDescription() {
-
-        return description;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj) && obj instanceof Drink && type == ((Drink) obj).type && alcoholVol == ((Drink) obj).alcoholVol;
     }
 }

@@ -1,12 +1,19 @@
 package Task16;
 
-public class MenuItem implements Order {
-    int price;
-    String name;
-    String description;
+public abstract class MenuItem implements Comparable<MenuItem>{
+    private String name, description;
+    private double cost;
 
-    public int getPrice() {
-        return price;
+    public MenuItem(String name, String description, double cost) throws IllegalArgumentException {
+        if(!name.equals(""))
+            this.name = name;
+        else throw new IllegalArgumentException("Передано некорректное название элемента меню!");
+        if(!description.equals(""))
+            this.description = description;
+        else throw new IllegalArgumentException("Передано некорректное описание элемента меню!");
+        if(cost > 0)
+            this.cost = cost;
+        else throw new IllegalArgumentException("Передана некорректная цена для элемента меню!");
     }
 
     public String getName() {
@@ -17,73 +24,18 @@ public class MenuItem implements Order {
         return description;
     }
 
-    @Override
-    public boolean add(MenuItem item) {
-        return false;
+    public double getCost() {
+        return cost;
     }
 
     @Override
-    public String[] itemsNames() {
-        return new String[0];
+    public boolean equals(Object obj) {
+        return obj instanceof MenuItem && name.equals(((MenuItem) obj).name) && description.equals(((MenuItem) obj).description)
+                && cost == ((MenuItem) obj).cost;
     }
 
     @Override
-    public int itemsQuantity() {
-        return 0;
-    }
-
-    @Override
-    public int itemQuantity(String itemName) {
-        return 0;
-    }
-
-    @Override
-    public int itemQuantity(MenuItem itemName) {
-        return 0;
-    }
-
-    @Override
-    public MenuItem getItems() {
-        return null;
-    }
-
-    @Override
-    public boolean remove(String itemName) {
-        return false;
-    }
-
-    @Override
-    public boolean remove(MenuItem item) {
-        return false;
-    }
-
-    @Override
-    public int removeAll(String itemName) {
-        return 0;
-    }
-
-    @Override
-    public int removeAll(MenuItem item) {
-        return 0;
-    }
-
-    @Override
-    public MenuItem[] sortedItemsByCostDesc() {
-        return new MenuItem[0];
-    }
-
-    @Override
-    public int costTotal() {
-        return 0;
-    }
-
-    @Override
-    public Customer getCustomer() {
-        return null;
-    }
-
-    @Override
-    public void setCustomer(Customer customer) {
-
+    public int compareTo(MenuItem o) {
+        return (int)Math.round(cost - o.cost);
     }
 }
