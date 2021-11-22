@@ -1,46 +1,44 @@
 package Task19;
 
-import jdk.incubator.foreign.LibraryLookup;
-
 import java.util.*;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.TreeSet;
-import java.util.Scanner;
 
 
 public class GeneratorNumbers extends CoolNumber {
-    String[] ArrayOfNumbers;
+   static String[] ArrayOfNumbers;
 
-    public int main(String args[]) {
+    public static void main(String[] args) {
 
         int i;
-
-
-
 
         Scanner in=new Scanner(System.in);
 
         int n=in.nextInt();
 
-        for(i=0;i<n;i++){
+        ArrayOfNumbers= new String[20];
+        for(i=1;i<=n;i++){
             ArrayOfNumbers[i]=Generator();
         }
+        Arrays.sort(ArrayOfNumbers, (o1, o2) -> 0);
 
-        String el=ArrayOfNumbers[(int)(Math.random()*((n-0)+1))+0];
+        String el=ArrayOfNumbers[(int) (Math.random() * ((n - 1) + 1))];
 
-        List intlist = new ArrayList<String>(Arrays.asList(ArrayOfNumbers));
+        ArrayList<String> inlist= new ArrayList<>(Arrays.asList(ArrayOfNumbers));
 
-        HashSet<String> h= new HashSet<String>(intlist);
-
-        TreeSet<String> H= new TreeSet<String>(intlist);
+        HashSet<String> h= new HashSet<>(inlist);
 
         long m1 = System.currentTimeMillis();
-        System.out.println(intlist.contains(el));
+        System.out.println(inlist.contains(el));
         System.out.println((double)(System.currentTimeMillis()-m1) );
 
+
+        Set<String> sortedSet= new TreeSet<String>(new Comparator<String>(){
+            public int compare(String o1,String o2){
+                return o1.compareTo(o2);
+            }
+        });
+        sortedSet.addAll(inlist);
         long m2 = System.currentTimeMillis();
-        System.out.println(Collections.binarySearch(intlist,el));
+        System.out.println(binarySearch(sortedSet,el));
         System.out.println((double)(System.currentTimeMillis()-m2));
 
         long m3 = System.currentTimeMillis();
@@ -48,10 +46,12 @@ public class GeneratorNumbers extends CoolNumber {
         System.out.println((double)(System.currentTimeMillis()-m3));
 
         long m4 = System.currentTimeMillis();
+        TreeSet<String> H;
+        H = new TreeSet<>(inlist);
         System.out.println(H.contains(el));
         System.out.println((double)(System.currentTimeMillis()-m4));
-
-        return 0;
     }
+
+
 }
 

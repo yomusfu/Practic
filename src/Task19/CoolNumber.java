@@ -4,21 +4,21 @@ import java.lang.String;
 
 public class CoolNumber {
 
-    char x,y,z;
+    static char x,y,z;
 
-    double n,r;
+    static int n,r;
 
     public CoolNumber() {
-        this.n = 0;
-        this.r = 0;
+        n = 0;
+        r = 0;
     }
 
-    public CoolNumber(char x, char y, char z, double n, double r) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
-        this.n = n;
-        this.r = r;
+    public CoolNumber(char x, char y, char z, int n, int r) {
+        CoolNumber.x = x;
+        CoolNumber.y = y;
+        CoolNumber.z = z;
+        CoolNumber.n = n;
+        CoolNumber.r = r;
     }
 
     @Override
@@ -32,21 +32,21 @@ public class CoolNumber {
                 '}';
     }
 
-    public String Generator(){
+    public static String Generator(){
 
-        String Nomer="";
+        String Nomer=" ";
 
-        n=(Math.random()*((9-0)+1))+0;
-        r=(Math.random()*((199-1)+1))+1;
+        n=(int)(Math.random()*((9)+1));
+        r=(int)(Math.random()*((199-1)+1))+1;
         char[] OptionChar ={'A','B','E','K','M','H','O','P','C','T','Y','X'};
-        x=OptionChar[(int)(Math.random()*((12-0)+1))+0];
-        y=OptionChar[(int)(Math.random()*((12-0)+1))+0];
-        z=OptionChar[(int)(Math.random()*((12-0)+1))+0];
-        Nomer=x+Integer.toString((int)(n))+Integer.toString((int)(n))+Integer.toString((int)(n))+y+z+Integer.toString((int)(r));
+        x=OptionChar[(int)(Math.random()*((12-1)+1))];
+        y=OptionChar[(int)(Math.random()*((12-1)+1))];
+        z=OptionChar[(int)(Math.random()*((12-1)+1))];
+        Nomer=x+Integer.toString(n)+y+z+Integer.toString(r);
         return Nomer;
     }
 
-    public void OutPut (char x, char y, char z, double n, double r){
+    public void OutPut (char x, char y, char z, int n, int r){
 
         System.out.print(x);
         System.out.print(n);

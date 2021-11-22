@@ -18,11 +18,20 @@ public class Tasks {
         }
         return ans;
     }
-
+    public static boolean isThatMac(String s){
+        boolean f=false;
+        Pattern p1= Pattern.compile("([a-f]+[A-F]){3}+([0-9]{2}+:){2}+[0-9]{2}");
+        Matcher m1= p1.matcher(s);
+        boolean b=m1.matches();
+        return b;
+    }
     public static void main(String[] args) {
+        //ex1
+        System.out.println(isThatStr("abcdefghijklmnopqrstuv18340."));
+        System.out.println(isThatStr("abcdefghijklmnoasdfasdpqrstuv18340."));
         //ex2
-        System.out.println(isThatStr("abcdefghijklmnopqrstuv18340"));
-        System.out.println(isThatStr("asdzfghd4yt5y5"));
+        System.out.println(isThatMac("aE:dC:cA:56:76:54."));
+        System.out.println(isThatMac("01:23:45:67:89:Az."));
         System.out.println();
         //ex3
         System.out.println(findRubEurUsd("12.3 RUB, fejhge12 EUdsfrg3.789USD"));
