@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Downloads">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Downloads" />
+      <root url="jar://$USER_HOME$/Downloads/jsoup-1.14.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/Downloads" />
+      <root url="jar://$USER_HOME$/Downloads/jsoup-1.14.3-sources.jar!/" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/Downloads" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Downloads" recursive="false" type="SOURCES" />
+  </library>
+</component>
