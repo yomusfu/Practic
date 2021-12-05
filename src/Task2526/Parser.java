@@ -9,12 +9,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
 
 import com.google.gson.*;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class Parser {

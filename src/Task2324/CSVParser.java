@@ -1,4 +1,4 @@
-package Task2124;
+package Task2324;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +12,7 @@ public class CSVParser {
         String[] columns = input.split(",", 8);
         double incomeTmp = Double.parseDouble(columns[6]);
         double expenseTmp = Double.parseDouble(columns[7].
-                replaceAll("\\\"", "").replace(',', '.'));
+                replaceAll("\"", "").replace(',', '.'));
         if (incomeTmp == 0)
             calculateExpense(columns[5], expenseTmp);
         else
