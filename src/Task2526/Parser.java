@@ -54,7 +54,7 @@ public class Parser {
         }
     }
 
-    public void openJSON() { //src/Practise25_26/map.json
+    public void openJSON() {
         String json = "";
         try(FileReader reader = new FileReader("src/Task2526/metro.json")) {
             // читаем посимвольно

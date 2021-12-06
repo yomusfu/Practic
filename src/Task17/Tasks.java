@@ -10,7 +10,7 @@ public class Tasks {
     }
 
     public static ArrayList<String> findRubEurUsd(String s){
-        Pattern p  = Pattern.compile("\\d+(\\.\\d+)?\\s?((USD)|(EUR)|(RUB))");
+        Pattern p  = Pattern.compile("\\d+(\\.\\d+)?\\s?((USD)|(EUR)|(RUB))");//Цифровой символ и символ пробела
         Matcher m = p.matcher(s);
         ArrayList<String> ans = new ArrayList<>();
         while (m.find()){

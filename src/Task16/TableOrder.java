@@ -53,7 +53,6 @@ public class TableOrder extends AbstractOrder {
 
     @Override
     public MenuItem[] getItems() {
-        // А здесь лучше бы через множество сделать, но нет - использовать Collections нельзя...
         MenuItem[] uniqueItems = new MenuItem[size];
         int count = 0;
         for(int i = 0; i < size; i++){

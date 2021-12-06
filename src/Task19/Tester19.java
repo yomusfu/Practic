@@ -1,7 +1,7 @@
 package Task19;
 import java.util.*;
 
-public class Main {
+public class Tester19 {
     static Map<Integer, String> letters = new HashMap<>();
     static int[] digits = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     public static String genNumber() {
@@ -43,25 +43,30 @@ public class Main {
         boolean flag;
         long beginTime, elapsedTime;
         int time;
+
         System.out.println("Введите искомый номер:");
         System.out.println();
         String k1 = in.next();
+
         beginTime = System.nanoTime();
         flag = arrayList.contains(k1);
         elapsedTime = System.nanoTime() - beginTime;
         if (flag) System.out.println("Поиск перебором: номер найден, поиск занял " + elapsedTime + "нс");
         else System.out.println("Поиск перебором: номер не найден, поиск занял " + elapsedTime +"нс");
+
         Collections.sort(arrayList);
         beginTime = System.nanoTime();
         time = Collections.binarySearch(arrayList, k1);
         elapsedTime = System.nanoTime() - beginTime;
         if (time >=0) System.out.println("Поиск binarySearch: номер найден, поиск занял " + elapsedTime + "нс");
         else System.out.println("Поиск binarySearch: номер не найден, поиск занял " + elapsedTime +"нс");
+
         beginTime = System.nanoTime();
         flag = treeSet.contains(k1);
         elapsedTime = System.nanoTime() - beginTime;
         if (flag) System.out.println("Поиск treeSet: номер найден, поиск занял " + elapsedTime + "нс");
         else System.out.println("Поиск treeSet: номер не найден, поиск занял " + elapsedTime +"нс");
+
         beginTime = System.nanoTime();
         flag = hashSet.contains(k1);
         elapsedTime = System.nanoTime() - beginTime;
