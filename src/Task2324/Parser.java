@@ -3,7 +3,7 @@ package Task2324;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CSVParser {
+public class Parser {
     private double income = 0;
     private double expense = 0;
     private final Map<String, Double> expenseList = new HashMap<>();
