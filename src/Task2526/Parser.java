@@ -1,17 +1,15 @@
 
 package Task2526;
 
-import java.io.File;
-import java.io.IOException;
-
+import com.google.gson.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
 import java.io.FileReader;
 import java.io.FileWriter;
-
-import com.google.gson.*;
-import org.jsoup.select.Elements;
+import java.io.IOException;
 
 public class Parser {
     public Parser() {
@@ -46,7 +44,7 @@ public class Parser {
     }
 
     public void saveJSON(String json) {
-        try(FileWriter writer = new FileWriter("src/Task2526/metro.json", false)) {
+        try(FileWriter writer = new FileWriter("src/Practise25_26/map.json", false)) {
             writer.write(json);
             writer.flush();
         } catch (IOException e) {
@@ -54,9 +52,9 @@ public class Parser {
         }
     }
 
-    public void openJSON() {
+    public void openJSON() { //src/Practise25_26/map.json
         String json = "";
-        try(FileReader reader = new FileReader("src/Task2526/metro.json")) {
+        try(FileReader reader = new FileReader("src/Practise25_26/map.json")) {
             // читаем посимвольно
             int c;
             while((c=reader.read())!=-1){

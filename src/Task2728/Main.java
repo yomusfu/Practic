@@ -34,11 +34,11 @@ public class Main implements Runnable {
 
     private void resize(int i) {
         int cores =Runtime.getRuntime().availableProcessors();
-        String source = "src/Task2728/Images";
-        String dest = "src/Task2728/New_Images";
+        String source = "src/Practise27_28/images";
+        String dest = "src/Practise27_28/new_images";
 
         File srcSource = new File("src/123");
-        File srcDest = new File("src/Task2728/New_Images");
+        File srcDest = new File("src/Practise27_28/new_images");
 
         File srcDir = new File(source);
 
